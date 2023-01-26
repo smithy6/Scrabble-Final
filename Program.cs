@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,6 +93,7 @@ namespace Scrabble_Remix
 
         public void calculatePoints(string word) //Calculates the points for the players entered words
         {
+            word = word.ToLower();
             playerPoints = 0;
             for (int i = 0; i < word.Length; i++) // Iterate through each letter of the word
             {
@@ -128,6 +129,7 @@ namespace Scrabble_Remix
 
         public bool checkLetters(string word) //Checks whether a word can be formed using the letters in the randomLetters array
         {
+            word = word.ToLower(); // Convert the inputted word to lowercase
             int[] letterCount = new int[26];
             for (int i = 0; i < randomLetters.Length; i++) // Store the number of occurrences of each letter in the randomLetters array
             {
